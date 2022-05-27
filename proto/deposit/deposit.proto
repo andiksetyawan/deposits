@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package deposit;
+
+option go_package = "deposit/proto/deposit;deposit";
+
+message Deposit {
+  string wallet_id = 1;
+  double amount = 2;
+}
