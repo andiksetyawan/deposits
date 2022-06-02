@@ -14,15 +14,15 @@ type Balance struct {
 // Group table.
 type BalanceCodec struct{}
 
-// Encode a user into []byte //TODO
+// Encode a Balance into []byte
 func (jc *BalanceCodec) Encode(value interface{}) ([]byte, error) {
 	if _, isBalance := value.(*Balance); !isBalance {
-		return nil, fmt.Errorf("codec requires value *Deposit, got %T", value) //TODO
+		return nil, fmt.Errorf("codec requires value *Balance, got %T", value)
 	}
 	return json.Marshal(value)
 }
 
-// Decode a user from []byte to it's go representation. //TODO
+// Decode a Balance from []byte to it's go representation.
 func (jc *BalanceCodec) Decode(data []byte) (interface{}, error) {
 	var (
 		c   Balance
@@ -30,7 +30,7 @@ func (jc *BalanceCodec) Decode(data []byte) (interface{}, error) {
 	)
 	err = json.Unmarshal(data, &c)
 	if err != nil {
-		return nil, fmt.Errorf("error unmarshaling Wallet: %v", err) //TODO
+		return nil, fmt.Errorf("error unmarshaling Balance: %v", err)
 	}
 	return &c, nil
 }

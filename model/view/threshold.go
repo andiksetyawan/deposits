@@ -21,15 +21,15 @@ type History struct {
 // Group table.
 type ThresholdCodec struct{}
 
-// Encode a user into []byte //TODO
+// Encode a Threshold into []byte
 func (jc *ThresholdCodec) Encode(value interface{}) ([]byte, error) {
 	if _, isThreshold := value.(*Threshold); !isThreshold {
-		return nil, fmt.Errorf("codec requires value *Threshold, got %T", value) //TODO
+		return nil, fmt.Errorf("codec requires value *Threshold, got %T", value)
 	}
 	return json.Marshal(value)
 }
 
-// Decode a user from []byte to it's go representation. //TODO
+// Decode a Threshold from []byte
 func (jc *ThresholdCodec) Decode(data []byte) (interface{}, error) {
 	var (
 		c   Threshold
