@@ -1,6 +1,6 @@
 Simple example using GOKA (Kafka Client) 
 
-### RUN DEVELOPMENT:
+### Usage:
 ##### - web service
 ``go run web/cmd/main.go``
 
