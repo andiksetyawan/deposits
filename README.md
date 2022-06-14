@@ -1,6 +1,9 @@
 Simple example using GOKA (Kafka Client) 
 
 ### Usage:
+##### - kafka service
+``docker-compose up -d``
+
 ##### - web service
 ``go run web/cmd/main.go``
 
